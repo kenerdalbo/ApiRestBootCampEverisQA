@@ -18,12 +18,12 @@ Descrição: Api utilizada para consultar cidades e estados do Brasil e calcular
    
 
    	1. Pesquisar por Nome(cities, states, countries)
-   		/name=PARTE_DO_NOME_DESEJADO
-   		ex: https://localhost:8080/countries/name=brazil
+   		``/name=PARTE_DO_NOME_DESEJADO
+   		ex: https://localhost:8080/countries/name=brazil``
    	
    	2. Pesquisa Por Id(cities, states, countries)
-   		/id=ID
-   		ex: https://localhost:8080/countries/id=225
+   		``/id=ID
+   		ex: https://localhost:8080/countries/id=225``
 
       
 
