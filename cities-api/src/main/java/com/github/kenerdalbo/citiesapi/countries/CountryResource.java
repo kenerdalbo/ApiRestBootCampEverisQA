@@ -32,7 +32,7 @@ public class CountryResource {
         
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id={id}")
     public ResponseEntity getOne(@PathVariable Long id){
         Optional<Country> optional = repository.findById(id);
 

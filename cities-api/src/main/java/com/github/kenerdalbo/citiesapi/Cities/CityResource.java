@@ -33,7 +33,7 @@ public class CityResource {
         return repository.findAll(page);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id={id}")
     public ResponseEntity getOne(@PathVariable Long id){
         Optional<City> optional = repository.findById(id);
 
