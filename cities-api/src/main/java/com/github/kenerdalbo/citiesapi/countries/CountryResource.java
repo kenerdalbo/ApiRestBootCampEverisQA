@@ -2,6 +2,7 @@ package com.github.kenerdalbo.citiesapi.countries;
 
 import com.github.kenerdalbo.citiesapi.countries.Country;
 import com.github.kenerdalbo.citiesapi.countries.repository.CountryRepository;
+import com.github.kenerdalbo.citiesapi.states.State;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @RestController
@@ -38,5 +41,10 @@ public class CountryResource {
         }else{
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/name={name}")
+    public List<Country> byName(@PathVariable String name){
+        return repository.byName(name.toUpperCase(Locale.ROOT));
     }
 }
