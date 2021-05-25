@@ -33,8 +33,11 @@ Descrição: Api utilizada para consultar cidades e estados do Brasil e calcular
           * ``localhost:8080/distances/by-points?from=ID_CIDADE1&to=ID_CIDADE2``
      * Método byCube(Em metros)
           * ``localhost:8080/distances/by-cube?from=ID_CIDADE1&to=ID_CIDADE2``
-
      ​	
+ * Descobrir Cidades Proximas a X Km de distancia de uma cidade qualquer
+    
+    *  ``localhost:8080/distances/cidadeProx?id=ID_CIDADE&distKm=DISTANCIA_EM_KM``
+
 
 
 
