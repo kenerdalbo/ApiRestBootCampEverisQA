@@ -1,11 +1,14 @@
 package com.github.kenerdalbo.citiesapi.distances;
 
+import com.github.kenerdalbo.citiesapi.Cities.City;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/distances")
@@ -30,6 +33,13 @@ public class DistanceResource {
                          @RequestParam(name = "to") final Long city2) {
         log.info("byCube");
         return service.distanceByCubeInMeters(city1, city2);
+    }
+
+    @GetMapping("/cidadeProx")
+    public List<City> cidadesProximas(@RequestParam(name="id") final Long city,
+                                      @RequestParam(name="distKm") final int distanciaKm){
+        return service.buscaCidadesDistantesKm(city, distanciaKm);
+
     }
 
 //    @GetMapping("/by-math")

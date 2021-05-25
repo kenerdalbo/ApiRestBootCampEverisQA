@@ -1,4 +1,4 @@
-package com.github.kenerdalbo.citiesapi.countries.repository;
+package com.github.kenerdalbo.citiesapi.countries;
 
 import com.github.kenerdalbo.citiesapi.countries.Country;
 import com.github.kenerdalbo.citiesapi.states.State;

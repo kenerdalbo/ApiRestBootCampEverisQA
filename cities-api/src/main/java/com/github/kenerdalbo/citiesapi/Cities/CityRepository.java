@@ -18,4 +18,16 @@ public interface CityRepository extends JpaRepository<City, Long> {
 
     @Query(value = "SELECT * FROM cidade WHERE UPPER(nome) like %:name%", nativeQuery = true)
     List<City> byName(@Param("name")String name);
+
+    @Query(value= "select *\n" +
+            " from cidade  where id<>:cid and (6371 *\n" +
+            "        acos(\n" +
+            "            cos(radians((select latitude from cidade where id=:cid))) *\n" +
+            "            cos(radians(latitude)) *\n" +
+            "            cos(radians((select longitude from cidade where id=:cid)) - radians(longitude)) +\n" +
+            "            sin(radians((select latitude from cidade where id=:cid))) *\n" +
+            "            sin(radians(latitude))\n" +
+            "        )) <:dist", nativeQuery = true)
+    List<City> encontrarCidadesProximasKm(@Param("cid") Long city,
+                                          @Param("dist")int distanciaKm);
 }

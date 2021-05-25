@@ -1,8 +1,5 @@
 package com.github.kenerdalbo.citiesapi.countries;
 
-import com.github.kenerdalbo.citiesapi.countries.Country;
-import com.github.kenerdalbo.citiesapi.countries.repository.CountryRepository;
-import com.github.kenerdalbo.citiesapi.states.State;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
